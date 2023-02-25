@@ -5,8 +5,12 @@ import 'package:giro_kab/app/utils/image_const/image_const.dart';
 import 'package:giro_kab/app/utils/sized_box_const/sized_box_const.dart';
 
 class NewBottomLeftContainer extends StatelessWidget {
+  final String? titleText;
+  final String? image;
   const NewBottomLeftContainer({
     Key? key,
+    this.titleText,
+    this.image,
   }) : super(key: key);
 
   @override
@@ -26,17 +30,21 @@ class NewBottomLeftContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(
-                kMoney,
-                width: 16,
-                height: 22,
+              SizedBox(
+                child: image != null
+                    ? SvgPicture.asset(
+                        image!,
+                        width: 16,
+                        height: 22,
+                      )
+                    : const SizedBox(),
               ),
               kWidth10,
-              const Flexible(
+              Flexible(
                 child: Text(
-                  "500",
+                  titleText ?? "",
                   maxLines: 1,
-                  style: TextStyle(
+                  style: const TextStyle(
                     overflow: TextOverflow.ellipsis,
                     color: kTextColor,
                     fontSize: 26,
