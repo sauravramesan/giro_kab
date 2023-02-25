@@ -101,6 +101,7 @@ class RideDetailsPage extends StatelessWidget {
             );
           },
           separatorBuilder: (context, index) => const SizedBox(),
+
           itemCount: 1),
     );
   }
