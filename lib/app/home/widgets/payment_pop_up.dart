@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:giro_kab/app/home/widgets/booking_popup.dart';
 import 'package:giro_kab/app/utils/color_const/color_const.dart';
 import 'package:giro_kab/app/utils/padding_const/padding_const.dart';
 import 'package:giro_kab/app/utils/sized_box_const/sized_box_const.dart';
@@ -102,21 +103,11 @@ class PaymentPopUp extends StatelessWidget {
                   itemCount: 2,
                 ),
                 kHeight31,
-                ElevatedButton(
-                  onPressed: () {},
-                  style: const ButtonStyle(
-                      elevation: MaterialStatePropertyAll(0),
-                      padding: MaterialStatePropertyAll(
-                          EdgeInsets.symmetric(horizontal: 125, vertical: 20)),
-                      backgroundColor: MaterialStatePropertyAll(kTextColor),
-                      shape: MaterialStatePropertyAll(StadiumBorder())),
-                  child: const Text(
-                    "Submit",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                const CustomButton(
+                  horizontalPadding: 125,
+                  verticalPadding: 20,
+                  title: "Submit",
+                  color: kTextColor,
                 ),
                 kHeight21,
               ],

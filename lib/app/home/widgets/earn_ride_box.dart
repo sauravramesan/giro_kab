@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:giro_kab/app/utils/color_const/color_const.dart';
-import 'package:giro_kab/app/utils/image_const/image_const.dart';
 import 'package:giro_kab/app/utils/sized_box_const/sized_box_const.dart';
 
-class NewBottomLeftContainer extends StatelessWidget {
+class EarnRideWidget extends StatelessWidget {
   final String? titleText;
   final String? image;
-  const NewBottomLeftContainer({
+  final String? subTitleText;
+  const EarnRideWidget({
     Key? key,
     this.titleText,
     this.image,
+    this.subTitleText,
   }) : super(key: key);
 
   @override
@@ -39,7 +40,7 @@ class NewBottomLeftContainer extends StatelessWidget {
                       )
                     : const SizedBox(),
               ),
-              kWidth10,
+              image == null ? kWidth1 : kWidth10,
               Flexible(
                 child: Text(
                   titleText ?? "",
@@ -55,11 +56,11 @@ class NewBottomLeftContainer extends StatelessWidget {
             ],
           ),
           kHeight10,
-          const Flexible(
+          Flexible(
             child: Text(
-              "My Earnings",
+              subTitleText ?? "",
               maxLines: 1,
-              style: TextStyle(
+              style: const TextStyle(
                 overflow: TextOverflow.ellipsis,
                 color: kTextPrimaryColor,
                 fontSize: 18,

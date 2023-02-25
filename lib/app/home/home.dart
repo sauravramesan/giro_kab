@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:giro_kab/app/home/widgets/new_booking_popup.dart';
-import 'package:giro_kab/app/home/widgets/new_bottom_left_container.dart';
-import 'package:giro_kab/app/home/widgets/new_bottom_right_container.dart';
+import 'package:giro_kab/app/home/widgets/booking_popup.dart';
+import 'package:giro_kab/app/home/widgets/earn_ride_box.dart';
 import 'package:giro_kab/app/home/widgets/payment_pop_up.dart';
 import 'package:giro_kab/app/home/widgets/rejection_pop_up.dart';
 import 'package:giro_kab/app/utils/color_const/color_const.dart';
@@ -72,9 +71,17 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    NewBottomLeftContainer(),
+                    EarnRideWidget(
+                        titleText: "500",
+                        subTitleText: "My Earnings",
+                        image: kMoney),
                     kWidth20,
-                    NewBottomRightContainer(),
+                    EarnRideWidget(
+                      titleText: "10",
+                      subTitleText: "My Rides",
+                      image: null,
+                    ),
+                    // NewBottomRightContainer(),
                   ],
                 ),
               ),
